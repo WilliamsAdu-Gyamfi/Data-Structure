@@ -229,9 +229,11 @@ const {
   odds: { team1, x: draw, team2 },
 } = game;
 console.log(team1, draw, team2);
-
+*/
 /*
-//FROM CHATGPT
+
+//FROM STACKOVERFLOW
+
 function printGoals(...players) {
   // Print each player's name to the console
   players.forEach(player => console.log(player));
@@ -350,16 +352,19 @@ const averageOdds = function (odds) {
 };
 console.log(`Average odd: ${averageOdds}`);
 */
-
+//N0 1
 // Get all odds values
 const odds = Object.values(game.odds);
 
+//NO 2
 // Initialize a sum variable
+
 let sum = 0;
 
 // Loop through the odds to calculate the sum
 for (const odd of odds) {
   sum += odd;
+  console.log(odd);
 }
 
 // Calculate the average
@@ -367,3 +372,49 @@ const averageOdd = sum / odds.length;
 
 // Log the average odd to the console
 console.log(`Average odd: ${averageOdd}`);
+
+/*
+//ALTERNATELY NO2
+let sum = 0;
+for (const odd of Object.values(game.odds)) sum += odd;
+sum /= Object.values(game.odds).length;
+console.log(sum);
+*/
+
+//NO 3
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`odd of ${teamStr} ${odd}`);
+}
+
+// Destructure the team names and odds from the game
+/*
+const game1 = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  odds1: {
+    team1: 1.33,
+    draw: 3.25,
+    team2: 6.5,
+  },
+};
+
+//const { team1, draw, team2 } = game1.odds;
+//console.log(game1.odds);
+const { team1: team1Name, team2: team2Name, odds1 } = odds;
+const { team1: oddTeam1, draw: oddDraw, team2: oddTeam2 } = odds;
+console.log(odds);
+console.log(oddTeam1);
+
+// Print the formatted odds to the console
+console.log(`Odd of victory ${team1}: ${oddTeam1}`);
+console.log(`Odd of draw: ${oddDraw}`);
+console.log(`Odd of victory ${team2}: ${oddTeam2}`);
+//const {odds:{team1:, x:Odd of draw,  team2:Odd of victory Borrussia Dortmund}} = game
+/*
+//DESTRUCTURING
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+*/
