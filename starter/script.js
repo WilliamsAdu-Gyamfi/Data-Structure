@@ -418,3 +418,29 @@ const {
 } = game;
 console.log(team1, draw, team2);
 */
+
+const rest = new Map();
+rest.set('location', 'Ghana');
+console.log(rest);
+
+const question = new Map([
+  ['question', 'What is th best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScipt'],
+  ['correct', 3],
+  [true, 'Corret🤝'],
+  [false, 'try Again!😊'],
+]);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
