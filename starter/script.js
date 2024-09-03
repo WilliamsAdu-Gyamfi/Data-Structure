@@ -538,3 +538,7 @@ const correctEmail = "hello@williams.io";
 const emailToCheck = "Hello@WilliamS.io";
 
 console.log(areEmailsMatching(correctEmail, emailToCheck));
+
+const announcement =
+  "all passsengers at boarding door rejoice at boarding door";
+console.log(announcement.replaceAll("door", "gate"));
