@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
 // Data needed for a later exercise
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
 
   openingHours: {
     thu: {
@@ -298,39 +298,39 @@ game, it will look like this:
  */
 
 const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
   players: [
     [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
     ],
     [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
     ],
   ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
   odds: {
     team1: 1.33,
     x: 3.25,
@@ -383,7 +383,7 @@ console.log(sum);
 
 //NO 3
 for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
   console.log(`odd of ${teamStr} ${odd}`);
 }
 
@@ -420,22 +420,22 @@ console.log(team1, draw, team2);
 */
 
 const rest = new Map();
-rest.set('location', 'Ghana');
-console.log(rest.get('location'));
+rest.set("location", "Ghana");
+console.log(rest.get("location"));
 
 const question = new Map([
-  ['question', 'What is th best programming language?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScipt'],
-  ['correct', 3],
-  [true, 'Corret🤝'],
-  [false, 'try Again!😊'],
+  ["question", "What is th best programming language?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScipt"],
+  ["correct", 3],
+  [true, "Corret🤝"],
+  [false, "try Again!😊"],
 ]);
 
-console.log(question.get('question'));
+console.log(question.get("question"));
 for (const [key, value] of question) {
-  if (typeof key === 'number') {
+  if (typeof key === "number") {
     console.log(`Answer ${key}: ${value}`);
   }
 }
@@ -464,17 +464,17 @@ whether it's in the first half or second half (after 45 min) of the game, like t
  */
 
 const gameEvents = new Map([
-  [17, '⚽ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽ GOAL'],
-  [80, '⚽ GOAL'],
-  [92, '🔶 Yellow card'],
+  [17, "⚽ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "🔶 Yellow card"],
 ]);
 
 const events = [...new Set(gameEvents.values())];
@@ -493,3 +493,48 @@ for (const [key, value] of gameEvents) {
     console.log(`[SECOND HALF] ${key}: ${value}`);
   }
 }
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") {
+    console.log("You got middle seat");
+  } else {
+    console.log("You are lucky😘");
+  }
+};
+
+checkMiddleSeat("25A");
+
+const correctName = function (passenger) {
+  const passengerLower = passenger.toLowerCase();
+  const passengerCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  return passengerCorrect;
+};
+console.log(correctName("willIAms"));
+console.log(correctName("gYAmfi"));
+
+/*
+const email = "hello@williamss.io";
+const loginEmail = "Hello@williams.IO";
+const emailLower = loginEmail.toLowerCase();
+const correctEmail = emailLower.trim();
+console.log(correctEmail);
+//OR
+const supposedEmail = loginEmail.toLowerCase().trim();
+console.log(supposedEmail);
+*/
+
+function areEmailsMatching(correctEmail, emailToCheck) {
+  // Convert both emails to lowercase to ensure the comparison is case-insensitive
+  const normalizedCorrectEmail = correctEmail.toLowerCase().trim();
+  const normalizedEmailToCheck = emailToCheck.toLowerCase().trim();
+
+  // Compare the two emails
+  return normalizedCorrectEmail === normalizedEmailToCheck;
+}
+
+const correctEmail = "hello@williams.io";
+const emailToCheck = "Hello@WilliamS.io";
+
+console.log(areEmailsMatching(correctEmail, emailToCheck));
